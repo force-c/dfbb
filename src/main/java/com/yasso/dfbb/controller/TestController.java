@@ -15,8 +15,8 @@ public class TestController {
     public List<String> getList(){
         List<String> list = new LinkedList<>();
         list.add("one");
-        list.add("two");
-        list.add("three");
+//        list.add("two");
+//        list.add("three");
         //list.add("one");
         return list;
     }
