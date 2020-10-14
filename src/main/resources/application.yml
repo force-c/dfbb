@@ -1,7 +1,7 @@
 server:
   port: 9991
-spring:
-  data:
-    elasticsearch:
-      cluster-name: elasticsearch
-      cluster-nodes: 47.114.176.254:9200
+#spring:
+#  data:
+#    elasticsearch:
+#      cluster-name: elasticsearch
+#      cluster-nodes: 47.114.176.254:9200
