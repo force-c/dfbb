@@ -1,4 +1,4 @@
-package com.yasso.dfbb.controller;
+package com.yasso.dfbb.es.controller;
 
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;

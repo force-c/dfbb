@@ -1,4 +1,4 @@
-package com.yasso.dfbb.config;
+package com.yasso.dfbb.es.config;
 
 import org.apache.http.HttpHost;
 import org.elasticsearch.client.RestClient;
