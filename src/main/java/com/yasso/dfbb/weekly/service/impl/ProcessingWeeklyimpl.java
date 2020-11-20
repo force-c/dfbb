@@ -42,7 +42,6 @@ public class ProcessingWeeklyimpl implements ProcessingWeekly {
         List<List<ArrayList<CellElement>>> allData = new ArrayList<>();
         // sheet页面处理
         int numberOfSheets = workbook.getNumberOfSheets();
-        //for (Sheet sheet : sheets) {
         for (int sheetIndex=0; sheetIndex<numberOfSheets; sheetIndex++) {
             Sheet sheet = workbook.getSheetAt(sheetIndex);
             Row temp = sheet.getRow(0);
@@ -99,7 +98,6 @@ public class ProcessingWeeklyimpl implements ProcessingWeekly {
                     String projectCode = element.get(projectCodeIndex);
                     if ( !plan.equals("0") || !expend.equals("0") || !residue.equals("0")) {
                         System.err.println("提醒项目负责人  ->  " + projectLeader + "  你的项目状态忘记变更了, 项目代号  ->  " + projectCode);
-
                     }
                 }
             });
