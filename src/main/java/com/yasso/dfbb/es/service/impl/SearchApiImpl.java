@@ -128,7 +128,7 @@ public class SearchApiImpl implements SearchApi {
         int totalShards = searchResponse.getTotalShards();
         // 搜索成功的分片的统计信息
         int successfulShards = searchResponse.getSuccessfulShards();
-
+        System.out.println("nice");
     }
 
 
