@@ -1,7 +1,28 @@
 server:
   port: 9991
-#spring:
-#  data:
-#    elasticsearch:
-#      cluster-name: elasticsearch
-#      cluster-nodes: 47.114.176.254:9200
+elasticsearch:
+  host: 127.0.0.1
+  port1: 9200
+  port2: 9200
+  scheme: http
+logging:
+  config: classpath:logbak-spring.xml
+
+#rocketmq 相关配置
+rocketmq:
+  #生产者组名
+  producerGroup: producer-group
+  #生产者组名
+  consumerGroup: consumer-group
+  #NameServer 地址
+  namesrvaddr: localhost:9876
+
+
+#线程池配置
+thread-pool:
+  corePoolSize: 10
+  maxPoolSize: 50
+  queueCapacity: 200
+  keepAliveSeconds: 10
+  threadNamePrefix: MyExecutor-
+  allowCoreThreadTimeOut: false

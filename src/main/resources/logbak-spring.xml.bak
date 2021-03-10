@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+<!--	&lt;!&ndash;定义日志文件的存储地址 ，这个使用的是相对路径，即在日志文件存放在项目根路径logs文件夹下&ndash;&gt;-->
+<!--	<property name="LOG_HOME" value="./logs" />-->
+<!--	&lt;!&ndash;LogStash访问host&ndash;&gt;-->
+<!--&lt;!&ndash;	<springProperty name="LOG_STASH_HOST" scope="context" source="logstash.host" defaultValue="127.0.0.1"/>&ndash;&gt;-->
+<!--	&lt;!&ndash;应用名称&ndash;&gt;-->
+<!--	<property name="APP_NAME" value="logstash"/>-->
+<!--	&lt;!&ndash;日志文件保存路径&ndash;&gt;-->
+<!--	<contextName>${APP_NAME}</contextName>-->
+
+<!--	&lt;!&ndash; 控制台输出 &ndash;&gt;-->
+<!--	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">-->
+<!--		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">-->
+<!--			&lt;!&ndash;格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符&ndash;&gt;-->
+<!--			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>-->
+<!--		</encoder>-->
+<!--	</appender>-->
+
+<!--	&lt;!&ndash; 按照每天生成日志文件  只输出INFO&ndash;&gt;-->
+<!--	<appender name="FILE_INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+<!--		&lt;!&ndash;指定日志输出位置 支持通配符 若没有文件夹则会自己创建 .log后面如果加上<.gz、.zip> 则会自动压缩日志文件&ndash;&gt;-->
+<!--		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+<!--			<fileNamePattern>${LOG_HOME}/INFO/info.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>-->
+<!--			&lt;!&ndash;日志文件保留天数&ndash;&gt;-->
+<!--			<MaxHistory>30</MaxHistory>-->
+<!--			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">-->
+<!--				&lt;!&ndash;单个日志文件最大大小&ndash;&gt;-->
+<!--				<maxFileSize>3MB</maxFileSize>-->
+<!--			</timeBasedFileNamingAndTriggeringPolicy>-->
+<!--		</rollingPolicy>-->
+<!--		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">-->
+<!--			&lt;!&ndash;格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符&ndash;&gt;-->
+<!--			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>-->
+<!--			<charset>UTF-8</charset>-->
+<!--		</encoder>-->
+<!--		&lt;!&ndash;		过滤日志级别 只输出INFO级别日志&ndash;&gt;-->
+<!--		<filter class="ch.qos.logback.classic.filter.LevelFilter">-->
+<!--			<level>INFO</level>-->
+<!--			<onMatch>ACCEPT</onMatch>-->
+<!--			<onMismatch>DENY</onMismatch>-->
+<!--		</filter>-->
+<!--	</appender>-->
+
+
+<!--	&lt;!&ndash; 按照每天生成日志文件  只输出DEBUG&ndash;&gt;-->
+<!--	<appender name="FILE_DEBUG" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+<!--		&lt;!&ndash;指定日志输出位置 支持通配符 若没有文件夹则会自己创建 .log后面如果加上<.gz、.zip> 则会自动压缩日志文件&ndash;&gt;-->
+<!--		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+<!--			<fileNamePattern>${LOG_HOME}/DEBUG/debug.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>-->
+<!--			&lt;!&ndash;日志文件保留天数&ndash;&gt;-->
+<!--			<MaxHistory>30</MaxHistory>-->
+<!--			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">-->
+<!--				&lt;!&ndash;单个日志文件最大大小&ndash;&gt;-->
+<!--				<maxFileSize>3MB</maxFileSize>-->
+<!--			</timeBasedFileNamingAndTriggeringPolicy>-->
+<!--		</rollingPolicy>-->
+<!--		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">-->
+<!--			&lt;!&ndash;格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符&ndash;&gt;-->
+<!--			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>-->
+<!--			<charset>UTF-8</charset>-->
+<!--		</encoder>-->
+<!--		&lt;!&ndash;		过滤日志级别 只输出DEBUG级别日志&ndash;&gt;-->
+<!--		<filter class="ch.qos.logback.classic.filter.LevelFilter">-->
+<!--			<level>DEBUG</level>-->
+<!--			<onMatch>ACCEPT</onMatch>-->
+<!--			<onMismatch>DENY</onMismatch>-->
+<!--		</filter>-->
+<!--	</appender>-->
+
+<!--	&lt;!&ndash; 按照每天生成日志文件  只输出WARN&ndash;&gt;-->
+<!--	<appender name="FILE_WARN" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+<!--		&lt;!&ndash;指定日志输出位置 支持通配符 若没有文件夹则会自己创建 .log后面如果加上<.gz、.zip> 则会自动压缩日志文件&ndash;&gt;-->
+<!--		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+<!--			<fileNamePattern>${LOG_HOME}/WARN/debug.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>-->
+<!--			&lt;!&ndash;日志文件保留天数&ndash;&gt;-->
+<!--			<MaxHistory>30</MaxHistory>-->
+<!--			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">-->
+<!--				&lt;!&ndash;单个日志文件最大大小&ndash;&gt;-->
+<!--				<maxFileSize>3MB</maxFileSize>-->
+<!--			</timeBasedFileNamingAndTriggeringPolicy>-->
+<!--		</rollingPolicy>-->
+<!--		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">-->
+<!--			&lt;!&ndash;格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符&ndash;&gt;-->
+<!--			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>-->
+<!--			<charset>UTF-8</charset>-->
+<!--		</encoder>-->
+<!--		&lt;!&ndash;		过滤日志级别 只输出WARN级别日志&ndash;&gt;-->
+<!--		<filter class="ch.qos.logback.classic.filter.LevelFilter">-->
+<!--			<level>WARN</level>-->
+<!--			<onMatch>ACCEPT</onMatch>-->
+<!--			<onMismatch>DENY</onMismatch>-->
+<!--		</filter>-->
+<!--	</appender>-->
+
+<!--	&lt;!&ndash; 按照每天生成日志文件  只输出ERROR&ndash;&gt;-->
+<!--	<appender name="FILE_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+<!--		&lt;!&ndash;指定日志输出位置 支持通配符 若没有文件夹则会自己创建 .log后面如果加上<.gz、.zip> 则会自动压缩日志文件&ndash;&gt;-->
+<!--		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+<!--			<fileNamePattern>${LOG_HOME}/ERROR/error.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>-->
+<!--			&lt;!&ndash;日志文件保留天数&ndash;&gt;-->
+<!--			<MaxHistory>30</MaxHistory>-->
+<!--			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">-->
+<!--				&lt;!&ndash;单个日志文件最大大小&ndash;&gt;-->
+<!--				<maxFileSize>3MB</maxFileSize>-->
+<!--			</timeBasedFileNamingAndTriggeringPolicy>-->
+<!--		</rollingPolicy>-->
+<!--		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">-->
+<!--			&lt;!&ndash;格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符&ndash;&gt;-->
+<!--			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>-->
+<!--			<charset>UTF-8</charset>-->
+<!--		</encoder>-->
+<!--		&lt;!&ndash;		过滤日志级别 只输出ERROR级别日志&ndash;&gt;-->
+<!--		<filter class="ch.qos.logback.classic.filter.LevelFilter">-->
+<!--			<level>ERROR</level>-->
+<!--			<onMatch>ACCEPT</onMatch>-->
+<!--			<onMismatch>DENY</onMismatch>-->
+<!--		</filter>-->
+<!--	</appender>-->
+
+
+	<include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+	<include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+	<!--应用名称-->
+	<property name="APP_NAME" value="logstash"/>
+	<!--日志文件保存路径-->
+	<property name="LOG_FILE_PATH" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}/logs}"/>
+	<contextName>${APP_NAME}</contextName>
+	<!--每天记录日志到文件appender-->
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_FILE_PATH}/${APP_NAME}-%d{yyyy-MM-dd}.log</fileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${FILE_LOG_PATTERN}</pattern>
+		</encoder>
+	</appender>
+	<!--输出到logstash的appender-->
+	<appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+		<!--可以访问的logstash日志收集端口-->
+		<destination>127.0.0.1:4560</destination>
+		<encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder"/>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>ERROR</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+	</appender>
+
+<!--	&lt;!&ndash;配置日志输出到LogStash7.9.2&ndash;&gt;-->
+<!--	&lt;!&ndash;ERROR日志输出到LogStash&ndash;&gt;-->
+<!--	<appender name="LOG_STASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">-->
+<!--&lt;!&ndash;		<filter class="ch.qos.logback.classic.filter.LevelFilter">&ndash;&gt;-->
+<!--&lt;!&ndash;			<level>ERROR</level>&ndash;&gt;-->
+<!--&lt;!&ndash;			<onMatch>ACCEPT</onMatch>&ndash;&gt;-->
+<!--&lt;!&ndash;			<onMismatch>DENY</onMismatch>&ndash;&gt;-->
+<!--&lt;!&ndash;		</filter>&ndash;&gt;-->
+<!--		<destination>127.0.0.1:4560</destination>-->
+<!--		<encoder charset="UTF-8" class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder"/>-->
+
+<!--	</appender>-->
+
+
+
+
+	<!-- 定义日志输出级别 然后引用之前定义好的处理器-->
+	<root level="INFO">
+<!--		<appender-ref ref="CONSOLE" />-->
+<!--		<appender-ref ref="FILE_INFO" />-->
+<!--		<appender-ref ref="FILE_DEBUG" />-->
+<!--		<appender-ref ref="FILE_WARN" />-->
+<!--		<appender-ref ref="FILE_ERROR" />-->
+<!--		<appender-ref ref="LOG_STASH" />-->
+		<appender-ref ref="CONSOLE"/>
+		<appender-ref ref="FILE"/>
+		<appender-ref ref="LOGSTASH"/>
+	</root>
+</configuration>
