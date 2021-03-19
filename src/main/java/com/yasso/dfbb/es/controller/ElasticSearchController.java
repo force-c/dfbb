@@ -3,7 +3,6 @@ package com.yasso.dfbb.es.controller;
 import com.yasso.dfbb.es.entity.ESResponse;
 import com.yasso.dfbb.es.entity.ESSearchParam;
 import com.yasso.dfbb.es.entity.Movies;
-import com.yasso.dfbb.es.repository.MoviesRepository;
 import com.yasso.dfbb.es.utils.ES7QueryTools;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
@@ -31,9 +30,6 @@ import org.elasticsearch.search.suggest.SuggestBuilder;
 import org.elasticsearch.search.suggest.completion.CompletionSuggestionBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -59,8 +55,6 @@ public class ElasticSearchController {
     @Autowired
     private ES7QueryTools es7QueryTools;
 
-    @Autowired
-    private MoviesRepository moviesRepository;
 
     @GetMapping("/getString")
     public String getString(){
@@ -133,14 +127,6 @@ public class ElasticSearchController {
         return new ESResponse(OK,null,re);
     }
 
-    @GetMapping("/findByTitle")
-    public List<Movies> findByTitle(@RequestParam String title,
-                                    @RequestParam(defaultValue = "0") Integer page,
-                                    @RequestParam(defaultValue = "10") Integer size){
-        Pageable pageable = PageRequest.of(page,size);
-        Page<Movies> movies = moviesRepository.findByTitle(title, pageable);
-        return movies.getContent();
-    }
 
     @PostMapping("/byParams")
     public ESResponse byParams(ESSearchParam esSearchParam){

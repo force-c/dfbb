@@ -1,14 +1,10 @@
 package com.yasso.dfbb.entity;
 
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.elasticsearch.annotations.Document;
 
 @Data
-@Document(indexName = "testdoct", type = "testbean")
 public class TestBean {
 
-    @Id
     private long id;
     private String name;
     private Integer age;

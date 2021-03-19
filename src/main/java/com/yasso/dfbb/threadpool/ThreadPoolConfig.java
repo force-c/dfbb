@@ -68,7 +68,7 @@ public class ThreadPoolConfig {
         // CALLER_RUNS：不在新线程中执行任务，而是有调用者所在的线程来执行
         // CallerRunsPolicy：由调用线程（提交任务的线程）处理该任务
         executor.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());
-//        executor.initialize();
+        executor.initialize();
         return executor;
     }
 

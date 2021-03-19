@@ -8,8 +8,9 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Service;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.lang.reflect.Field;
+import java.text.DateFormat;
+import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -23,6 +24,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 @RequiredArgsConstructor
 public class Th2 {
 
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
     private static final Logger LOGGER = LoggerFactory.getLogger(Th2.class);
 
     private final ThreadPoolTaskExecutor executor;
@@ -33,8 +39,10 @@ public class Th2 {
         executor.submit(() -> {
             LOGGER.info("nice");
         });
+
         return;
     }
+
 
 
     @Async("taskExecutor")
@@ -59,16 +67,29 @@ public class Th2 {
                 LOGGER.info("3");
             }
         });
+        executor.submit(() -> {
+
+        });
+
+
+
+
     }
 
     @Async
     public void th2_4() {
+        HashMap<Object, Object> hashMap = new HashMap<>();
+        Object put = hashMap.put("1", "1");
+        Executors.newSingleThreadExecutor();
+        Executors.newFixedThreadPool(1);
+        Executors.newScheduledThreadPool(1);
         executor.execute(() -> {
             for (Integer i = 0; i < nums; i++) {
                 LOGGER.info("4");
             }
         });
     }
+
 
     public void th2_5() {
         Callable<String> callable = new Callable() {
@@ -139,18 +160,27 @@ public class Th2 {
         }
     }
 
+    private Integer ii = 10;
 
-    public static void main(String[] args) {
-        ExecutorService executorService = Executors.newFixedThreadPool(0);
-        ExecutorService executorService1 = Executors.newCachedThreadPool();
-        ExecutorService executorService2 = Executors.newSingleThreadExecutor();
-        ForkJoinPool forkJoinPool = new ForkJoinPool();
-        ExecutorService executorService3 = Executors.newWorkStealingPool(9);
-        ScheduledExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(10);
-        scheduledThreadPool.scheduleWithFixedDelay(() -> {
+    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException {
+//        ExecutorService executorService = Executors.newFixedThreadPool(0);
+//        ExecutorService executorService1 = Executors.newCachedThreadPool();
+//        ExecutorService executorService2 = Executors.newSingleThreadExecutor();
+//        ForkJoinPool forkJoinPool = new ForkJoinPool();
+//        ExecutorService executorService3 = Executors.newWorkStealingPool(9);
+//        ScheduledExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(10);
+//        scheduledThreadPool.scheduleWithFixedDelay(() -> {
+//
+//        }, 10, 10, TimeUnit.SECONDS);
 
-        }, 10, 10, TimeUnit.SECONDS);
+//        Field theUnsafe = Unsafe.class.getDeclaredField("theUnsafe");
+//        theUnsafe.setAccessible(true);
+//        Unsafe unsafe = (Unsafe) theUnsafe.get(null);
+//        long lk = unsafe.objectFieldOffset(Th2.class.getDeclaredField("ii"));
+//        System.out.println(lk);
     }
+
+
 
 
 }

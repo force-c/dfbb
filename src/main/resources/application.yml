@@ -26,3 +26,10 @@ thread-pool:
   keepAliveSeconds: 10
   threadNamePrefix: MyExecutor-
   allowCoreThreadTimeOut: false
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: nuoweidesenlin
+    url: jdbc:mysql://47.114.176.254:7101/user_db?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+

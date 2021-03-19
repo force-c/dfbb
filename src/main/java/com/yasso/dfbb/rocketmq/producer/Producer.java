@@ -1,7 +1,7 @@
 package com.yasso.dfbb.rocketmq.producer;
 
 import com.alibaba.fastjson.JSON;
-import com.yasso.dfbb.mq.rocketmq.TheMessage;
+import com.yasso.dfbb.rocketmq.TheMessage;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.client.producer.SendResult;
