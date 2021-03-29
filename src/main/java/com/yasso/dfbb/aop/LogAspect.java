@@ -124,7 +124,8 @@ public class LogAspect {
         for (StackTraceElement stackTraceElement : stackTraceElements) {
             stringBuffer.append(stackTraceElement).append("\n");
         }
-        String message = exceptionName + ":" + exceptionMessage + "\n\t" + stringBuffer.toString();
+        //String message = exceptionName + ":" + exceptionMessage + "\n\t" + stringBuffer.toString();
+        String message = exceptionName + ":" + exceptionMessage + "\n\t";
         return message;
     }
 

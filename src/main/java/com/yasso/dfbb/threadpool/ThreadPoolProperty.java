@@ -2,6 +2,7 @@ package com.yasso.dfbb.threadpool;
 
 import lombok.*;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 
 /**
  * @author guochuang
@@ -9,7 +10,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @date 2021/3/3 10:43
  */
 @Data
-@ConfigurationProperties(prefix = "thread-pool")
+@Configuration
+//@ConfigurationProperties(prefix = "thread-pool")
 public class ThreadPoolProperty {
     /**
      * 核心线程数

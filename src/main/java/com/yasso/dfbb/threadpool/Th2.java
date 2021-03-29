@@ -178,7 +178,10 @@ public class Th2 {
 //        Unsafe unsafe = (Unsafe) theUnsafe.get(null);
 //        long lk = unsafe.objectFieldOffset(Th2.class.getDeclaredField("ii"));
 //        System.out.println(lk);
+        Map<String, Object> map = new HashMap<>();
+        System.out.println(map.get("standcode"));
     }
+
 
 
 

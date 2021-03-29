@@ -22,7 +22,7 @@ import java.util.concurrent.ThreadPoolExecutor;
  * @date 2021/3/3 10:39
  */
 //@EnableAsync
-//@Configuration
+@Configuration
 @RequiredArgsConstructor
 public class OverwriteDefaultThreadPool implements AsyncConfigurer {
     private static final Logger LOGGER = LoggerFactory.getLogger(OverwriteDefaultThreadPool.class);
